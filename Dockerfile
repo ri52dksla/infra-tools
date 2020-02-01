@@ -47,7 +47,7 @@ RUN TEMP_DIR=$(mktemp -d) && \
     KREW=./krew-"$(uname | tr '[:upper:]' '[:lower:]')_amd64" && \
     "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz && \
     "$KREW" update && \
-    rm ${TEMP_DIR}
+    rm -r ${TEMP_DIR}
 
 # install kubectx, kubens
 # https://github.com/ahmetb/kubectx#installation
